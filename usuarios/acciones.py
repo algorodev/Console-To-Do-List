@@ -1,4 +1,5 @@
 import usuarios.usuarios as modelo
+import notas.acciones
 
 class Acciones:
 
@@ -44,10 +45,12 @@ class Acciones:
     -   Salir --> Salir
         """)
 
+        acciones = notas.acciones.Acciones()
+
         accion = input("¿Qué quieres hacer?: ")
 
         if accion == "Crear" or accion == "crear":
-            print("Crear")
+            acciones.crear(usuario)
             self.proximasAcciones(usuario)
 
         elif accion == "Mostrar" or accion == "mostrar":
