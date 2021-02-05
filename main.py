@@ -9,27 +9,23 @@
     -   Eliminar Notas
 """
 
+from usuarios import acciones
+
 print("******* BIENVENIDO *******")
 print("""   Acciones disponibles
     -   Registro
     -   Login
 """)
 
+acciones = acciones.Acciones()
+
 accion = input("¿Qué quieres hacer?: ")
 
 if accion == "Registro" or accion == "registro":
-    print("Rellena los siguientes datos ...")
-
-    nombre = input("Introduce tu nombre: ")
-    apellidos = input("Introduce tus apellidos: ")
-    email = input("Introduce tu email: ")
-    password = input("Introduce tu contraseña: ")
+    acciones.registro()
 
 elif accion == "Login" or accion == "login":
-    print("Introduce tus credenciales ...")
-
-    email = input("Introduce tu email: ")
-    password = input("Introduce tu contraseña: ")
+    acciones.login()
 
 else:
     print("Lo siento, introduce una opción válida ...")
