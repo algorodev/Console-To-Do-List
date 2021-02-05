@@ -54,7 +54,7 @@ class Acciones:
             self.proximasAcciones(usuario)
 
         elif accion == "Mostrar" or accion == "mostrar":
-            print("Mostrar")
+            acciones.mostrar(usuario)
             self.proximasAcciones(usuario)
 
         elif accion == "Eliminar" or accion == "eliminar":
