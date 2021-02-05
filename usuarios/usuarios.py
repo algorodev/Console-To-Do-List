@@ -34,4 +34,14 @@ class Usuarios:
         return result
 
     def identificar(self):
-        return self
+        cifrado = hashlib.sha256()
+        cifrado.update(self.password.encode('utf8'))
+        password = cifrado.hexdigest()
+
+        sql = "SELECT * FROM usuarios WHERE email = %s AND password = %s"
+        usuario = (self.email, password)
+
+        cursor.execute(sql, usuario)
+        result = cursor.fetchone()
+
+        return result

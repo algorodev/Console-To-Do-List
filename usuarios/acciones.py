@@ -21,5 +21,16 @@ class Acciones:
     def login(self):
         print("Introduce tus credenciales ...")
 
-        email = input("Introduce tu email: ")
-        password = input("Introduce tu contraseña: ")
+        try:
+            email = input("Introduce tu email: ")
+            password = input("Introduce tu contraseña: ")
+
+            usuario = modelo.Usuarios('', '', email, password)
+            login = usuario.identificar()
+
+            if email == login[3]:
+                print(f"Bienvenido de nuevo {login[1]} !!")
+                self.proximasAcciones(login)
+        except Exception as e:
+            print("Las credenciales no són correctas ...")
+
